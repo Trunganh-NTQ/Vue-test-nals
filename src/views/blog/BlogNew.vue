@@ -64,7 +64,7 @@ import { mapActions } from 'vuex';
       }
     },
     created() {
-      this.idRc = this.$route.params.id
+      this.idRc = parseInt(this.$route.params.id)
       if (this.idRc !== 0) {
         this.loadBlog()
         this.isEdit = true
@@ -92,9 +92,20 @@ import { mapActions } from 'vuex';
             id: this.idRc,
             formData: data
           }
-          await this.updateBlog(dataEdit);
+          const res = await this.updateBlog(dataEdit);
+          this.onReceiveCreateBroadcastResponse(res.status == 201)
         } else {
-          await this.newBlog(data);
+          const res = await this.newBlog(data);
+          this.onReceiveCreateBroadcastResponse(res.status == 201)
+        }
+      },
+      // Handle broadcast creation response
+      onReceiveCreateBroadcastResponse(success) {
+        if (success) {
+          window.toastr.success('success')
+          this.$router.push({ path: '/' })
+        } else {
+          window.toastr.error('error')
         }
       },
       async loadBlog() {
