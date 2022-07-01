@@ -5,35 +5,77 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "eslint --ext .js,.vue",
+    "lint-fix": "eslint --fix --ext .js,.vue"
   },
   "dependencies": {
+    "axios": "^0.27.2",
+    "bootstrap": "^5.1.3",
+    "bootstrap-vue": "^2.22.0",
     "core-js": "^3.8.3",
-    "vue": "^2.6.14"
+    "dotenv": "^8.2.0",
+    "lodash": "^4.17.21",
+    "node-sass": "^7.0.1",
+    "sass-loader": "^13.0.2",
+    "style-loader": "^3.3.1",
+    "toastr": "^2.1.4",
+    "vee-validate": "<3.0.0",
+    "vue": "^2.6.14",
+    "vue-router": "^3.5.1",
+    "vuex": "3.6.2",
+    "vuex-persistedstate": "^3.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
     "eslint": "^7.32.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
     "eslint-plugin-vue": "^8.0.3",
     "vue-template-compiler": "^2.6.14"
   },
   "eslintConfig": {
     "root": true,
     "env": {
-      "node": true
+      "browser": true,
+      "es6": true,
+      "node": true,
+      "jquery": true
     },
     "extends": [
       "plugin:vue/essential",
       "eslint:recommended"
     ],
+    "parser": "vue-eslint-parser",
     "parserOptions": {
-      "parser": "@babel/eslint-parser"
+      "ecmaVersion": 7,
+      "sourceType": "module"
     },
-    "rules": {}
+    "rules": {
+      "semi": [
+        "error",
+        "always"
+      ],
+      "space-before-function-paren": [
+        "error",
+        "never"
+      ],
+      "indent": [
+        "error",
+        2
+      ],
+      "eol-last": "off"
+    }
   },
   "browserslist": [
     "> 1%",

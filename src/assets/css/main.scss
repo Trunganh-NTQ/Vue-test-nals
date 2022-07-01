@@ -1,0 +1,26 @@
+.error-explanation {
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: #fa5c7c;
+}
+
+@for $i from 10 through 800 {
+  $padding: 0px + $i;
+  $paddingView: 0% + $i;
+  .pt-#{$i} {
+    padding-top: $padding;
+  }
+  .px-#{$i} {
+    padding: 0 $paddingView;
+  }
+  .py-#{$i} {
+    padding: $paddingView 0;
+  }
+}
+
+@for $i from 101 through 500 {
+  $width: 0px + $i;
+  .w-#{$i} {
+    width: $width;
+  }
+}

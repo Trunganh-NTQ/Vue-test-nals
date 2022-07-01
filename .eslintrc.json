@@ -1,0 +1,29 @@
+{
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true,
+      "jquery": true
+    },
+    "extends": ["plugin:vue/essential", "standard"],
+    "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly",
+      "_": true
+    },
+    "parserOptions": {
+      "parser": "babel-eslint",
+      "ecmaVersion": 2018,
+      "sourceType": "module",
+      "allowImportExportEverywhere": true
+    },
+    "plugins": ["vue"],
+    "rules": {
+      "semi": ["error", "always"],
+      "space-before-function-paren": ["error", "never"],
+      "indent": ["error", 2],
+      "eol-last": "off"
+    },
+    "ignorePatterns": ["lib/"]
+  }
+  
